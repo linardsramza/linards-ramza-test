@@ -1,0 +1,105 @@
+html {
+  	scroll-behavior: smooth;
+}
+body {
+	margin: 0;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: $black-text;
+}
+picture {
+	display: flex;
+}
+figure {
+	margin: 0;
+}
+p {
+	margin: 0;
+}
+.hidden {
+	display: none;
+}
+.container {
+	max-width: 1480px;
+	position: relative;
+	padding: 0 1rem;
+	margin: 0 auto;
+	@include breakpoint(md) {
+		padding: 0 1.5rem;
+	}
+	&--full-width {
+		max-width: 100%;
+		padding: 0;
+	}
+	&--narrow {
+		max-width: 980px;
+	}
+	&--extra-narrow {
+		max-width: 777px;
+	}
+}
+.row {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	&--content-center {
+		justify-content: center;
+	}
+	&--space-between {
+		justify-content: space-between;
+	}
+}
+a {
+	color: $black-text;
+	text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+input, textarea {
+	font-family: 'Roboto Mono', monospace;
+	color: $blackish-text;
+	font-size: 1rem;
+	line-height: 1.875rem;
+	padding: 0.75rem 1rem;
+	border: 1px solid #999999;
+	border-radius: 2px;
+	&::placeholder {
+		color: $grey-text;
+		opacity: 1;
+	}
+}
+textarea {
+	min-height: 220px;
+}
+
+// Headings
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: $font-bold;
+}
+h1 {
+	font-size: 2rem;
+	line-height: 1.2;
+	@include breakpoint(md) {
+		font-size: 3.125rem;
+	}
+}
+
+// Buttons
+
+.primary-button {
+	font-family: 'Roboto Mono', monospace;
+	color: $white-text;
+	font-size: 1rem;
+	line-height: 1.5;
+	text-transform: $text-uppercase;
+	font-weight: $font-bold;
+	letter-spacing: 0.06rem;
+	background: linear-gradient(113.73deg, #F4962B 0%, #D417B7 100%);
+	border-radius: 29px;
+	padding: 1rem 1.875rem;
+	border-style: none;
+	filter: drop-shadow(0px 6px 8px rgba(0, 140, 140, 0.19));
+	cursor: pointer;
+}

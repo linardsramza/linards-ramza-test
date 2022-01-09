@@ -1,0 +1,284 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_general.scss";
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+*/
+
+header {
+	padding: 1rem 0;
+	@include breakpoint(md) {
+		padding: 1.875rem 0;
+	}
+	.col {
+		&--right {
+			display: flex;
+			align-items: center;
+		}
+	}
+	.mobile-menu-toggle {
+		@include breakpoint(md) {
+			display: none;
+		}
+	}
+	.nav-bar {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			display: none;
+			@include breakpoint(md) {
+				display: flex;
+			}
+			li {
+				@include breakpoint(md) {
+					margin-left: 3.125rem;
+					&:first-child {
+						margin-left: 0;
+					}
+				}
+				a {
+					display: inline-block;
+					font-weight: $font-bold;
+					@include breakpoint(md) {
+						font-size: 1.125rem;
+						line-height: 1.55;
+					}
+				}
+				&.current-menu-item {
+					a {
+						position: relative;
+						&:after {
+							content: "";
+							position: absolute;
+							width: 100%;
+							bottom: -6px;
+							left: 0;
+							height: 2px;
+							background: linear-gradient(113.73deg, #F4962B 0%, #D417B7 100%);
+						}
+					}
+				}
+			}
+		}
+	}
+	.mobile-menu {
+		position: absolute;
+		right: 1em;
+		background-color: white;
+		padding: 1em 1.5rem;
+		border: 1px solid rgba(0,0,0,.15);
+		border-radius: 0.25rem;
+		z-index: 1;
+		.nav-bar {
+			ul {
+				display: block;
+			}
+		}
+		li:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Contact form
+|--------------------------------------------------------------------------
+*/
+
+.contact-form {
+	background: url("../images/svg/form-section-bg.svg") no-repeat center top;
+	background-size: 300%;
+	background-color: #F9F9F9;
+	padding: 2.5rem 0 3rem 0;
+	margin-bottom: 3.75rem;
+	@include breakpoint(md) {
+		background-size: 120%;
+		padding: 76px 0 118px 0;
+	}
+	@include breakpoint(lg) {
+		background-size: 100%;
+	}
+	.col {
+		display: flex;
+		flex-direction: column;
+		&--left {
+			justify-content: center;
+			width: 100%;
+			@include breakpoint(md) {
+				width: 58.2%;
+			}
+		}
+		&--right {
+			justify-content: flex-end;
+			width: 100%;
+			@include breakpoint(md) {
+				width: 41.8%;
+			}
+		}
+	}
+	.side-img {
+		overflow: hidden;
+		@include breakpoint(xl) {
+			margin-right: -54px;
+		}
+		figure {
+			margin-bottom: -.5rem;
+		}
+		img {
+			width: 468px;
+			max-width: 100%;
+		}
+	}
+	&__title {
+		color: $white-text;
+		margin-bottom: 1.25rem;
+	}
+	&__description {
+		max-width: 550px;
+		color: $white-text;
+		font-size: 1.375rem;
+		line-height: 1.36;
+		margin-bottom: 1.25rem;
+	}
+	&__form-block {
+		padding: 1.5rem;
+		background: #FFFFFF;
+		box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.09);
+		border-radius: 3px;
+		@include breakpoint(md) {
+			padding: 3.25rem 5.625rem;
+		}
+		.row {
+			@include breakpoint(md) {
+				flex-wrap: nowrap;
+			}
+		}
+	}
+	&__input-block {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 0 .625rem;
+		@include breakpoint(md) {
+			width: calc(50% - 1.25rem);
+		}
+		&--full-width {
+			width: 100%;
+		}
+		label {
+			font-weight: $font-bold;
+			line-height: 1.66;
+			margin-bottom: .25rem;
+			// flex-basis: 100%;
+			@include breakpoint(md) {
+				font-size: 1.125rem;
+			}
+		}
+		input, textarea {
+			// flex-basis: 100%;
+			resize: none;
+			margin-bottom: 1rem;
+			@include breakpoint(md) {
+				margin-bottom: 1.875rem;
+			}
+		}
+	}
+	button[type="submit"] {
+		margin: .3125rem 0 .5rem 0;
+	}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Listing
+|--------------------------------------------------------------------------
+*/
+
+.submissions {
+	background: url("../images/svg/submissions-bg.svg") no-repeat center top;
+	background-size: 150%;
+	background-color: #F9F9F9;
+	padding: 2.5rem 0 3rem 0;
+	margin-bottom: 3.75rem;
+	@include breakpoint(md) {
+		background-size: 120%;
+		padding: 150px 0 112px 0;
+	}
+	@include breakpoint(lg) {
+		background-size: 100%;
+	}
+	&__title {
+		color: $white-text;
+		margin-bottom: 3rem;
+		text-align: center;
+		@include breakpoint(lg) {
+			margin-bottom: 252px;
+		}
+	}
+	&__description {
+		line-height: 1.36;
+		margin-bottom: 3rem;
+		@include breakpoint(md) {
+			font-size: 1.375rem;
+		}
+		@include breakpoint(lg) {
+			margin-bottom: 90px;
+		}
+	}
+	.form-entry {
+		margin-bottom: 1.5rem;
+		&__title {
+			font-size: 1.25rem;
+			line-height: 1.4;
+			margin-bottom: 1.25rem;
+		}
+		&__info {
+			font-size: 13px;
+			line-height: 1.33;
+			font-weight: $font-medium;
+			color: $blue-text;
+			margin-bottom: 1.25rem;
+			@include breakpoint(sm) {
+				font-size: 15px;
+			}
+			a {
+				color: $blue-text;
+			}
+			.contact-link {
+				display: block;
+				margin-bottom: .25rem;
+				@include breakpoint(sm) {
+					display: inline;
+					margin-bottom: 0;
+				}
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			.separator {
+				display: none;
+				@include breakpoint(sm) {
+					display: inline;
+				}
+			}
+		}
+		&__content {
+			margin-bottom: 1.25rem;
+			margin-bottom: 1.25rem;
+		}
+		hr {
+			margin: 0;
+			height: 1px;
+			width: 100%;
+			background-color: #999999;
+		}
+	}
+	.primary-button {
+		margin-top: .375rem;
+	}
+}
